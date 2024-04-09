@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini Calculator</title>
+    <style>
+        .container{
+            background-color: teal;
+            width: 20rem;
+            margin: auto;
+            padding: 2rem;
+            border-radius: 15px;
+        }
+        .input-one, .input-two{
+            width: 5rem;
+            height: 1rem;
+            font-size: 0.7em;
+            border: none;
+            border-radius: 5px;
+        }
+        .show-data{
+            font-size: 1rem;
+            font-weight: 500;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>MINI CALCULATOR</h1>
+        <input type="number" placeholder="Enter 1st Number" class="input-one">
+        <input type="number" placeholder="Enter 2st Number" class="input-two">
+        <span>=</span>
+        <span class="show-data"></span>
+        <div class="btn-wrapper">
+            <button onclick="handleAdd()">ADD</button>
+            <button onclick="handleSubtract()">SUBTRACT</button>
+            <button onclick="handleMultiply()">MULTIPLY</button>
+            <button onclick="handleDivide()">DIVIDE</button>
+        </div>
+    </div>
+    <script>
+        let userData = document.querySelector('.input-one')
+        let userNumber = document.querySelector('.input-two')
+        let displayData = document.querySelector('.show-data')
+        function handleAdd(){
+            let sum = Number(userData.value) + Number(userNumber.value)
+            // console.log(sum) 
+            displayData.innerText = sum;
+        }
+
+        function handleSubtract(){
+            let sub = Number(userData.value) - Number(userNumber.value)
+            displayData.innerText = sub
+        }
+
+        function handleMultiply(){
+            let multi = Number(userData.value) * Number(userNumber.value)
+            displayData.innerText = multi
+        }
+
+        function handleDivide(){
+            let divide = Number(userData.value) / Number(userNumber.value)
+            displayData.innerText = divide
+        }
+    </script>
+</body>
+</html>
